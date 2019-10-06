@@ -96,6 +96,3 @@ miner=TweetMiner(result_limit = 200 )
 mined_tweets = miner.mine_user_tweets(user='pyconindia', max_pages=17)
 mined_tweets_df= pd.DataFrame(mined_tweets)
 tweets_df = mined_tweets_df[(~mined_tweets_df['text'].str.startswith('RT'))&(~mined_tweets_df['text'].str.startswith('@'))]#Filter out retweets and replies
-
-from google.colab import files
-files.download('initial.csv')
